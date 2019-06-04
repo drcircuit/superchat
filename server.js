@@ -2,14 +2,14 @@ const express = require("express");
 const app = express();
 const crypto = require("crypto");
 app.use("/", express.static("./wwwroot"));
-
+const port = process.env.PORT||666;
 function accentResponse(key) {
     return crypto
         .createHash("sha1")
         .update(key + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11", "binary")
         .digest("base64");
 }
-const server = app.listen(process.env.SERVERPORT || 666, () => {
+const server = app.listen(port, () => {
     console.info("Server listening on port", server.address().port);
 });
 const words = ["I'm really hungry", "I'm horny", "Hello", "Dipshit", "Wanna go out?", "Let's do it", "Wanna party?", "Wanna hook up?", "No", "Hellz Yeah!", "You stupid?", "Bye", "CYA", "The world is ending!", "Fuck it..", "Up up and away", "To infinity and beyond!"];
