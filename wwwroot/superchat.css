@@ -1,0 +1,19 @@
+#console{
+    background: #444;
+    color: white;
+    overflow:auto;
+    height: 500px;
+}
+.hero{
+    width: 150px;
+    display:block;
+    float:left;
+    clear:both;
+}
+body{
+    font-family: 'Overpass', monospace;
+}
+.announce{
+    color: yellow;
+    padding-left: 100px;
+}
